@@ -112,7 +112,7 @@ function formUpdate(event) {
                 type: 'GET', cache: false, success: function (data, jq) {
                     // then just take the target, and replace it with the target div from the returned data
                     $(target).html($(data).find(target).html());
-                    $(target).load(document.URL +  ' ' + target); // force reload of target to make sure it displays
+                    $(target).load(document.URL +  ' ' + target + '> *'); // force reload of target to make sure it displays
                     if (reply) {
                         $(document).trigger('form-update:changed', [reply]);  // flag for other scripts to use after completion of ajax call
                     }
